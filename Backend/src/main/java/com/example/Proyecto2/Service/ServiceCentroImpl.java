@@ -1,18 +1,22 @@
 package com.example.Proyecto2.Service;
+
 import com.example.Proyecto2.Models.Centro;
+import com.example.Proyecto2.Models.Mensajeros;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public class ServiceCentroImpl implements ServiceCentroINT {
-	
-	private final List<Centro> centros = new ArrayList<>();
+
+    private final List<Centro> centros = new ArrayList<>();
+
     @Override
     public List<Centro> obtenerCentros() {
         return centros;
     }
+
     @Override
     public Centro obtenerCentroPorId(String id) {
         if (id == null) return null;
@@ -23,11 +27,13 @@ public class ServiceCentroImpl implements ServiceCentroINT {
         }
         return null;
     }
+
     @Override
     public Centro crearCentro(Centro centro) {
         if (centro == null) return null;
         if (centro.getId() == null || centro.getId().isBlank()) return null;
         if (existeCentro(centro.getId())) return null;
+
         if (centro.getMensajerosIds() == null) {
             centro.setMensajerosIds(new ArrayList<>());
         }
@@ -35,6 +41,7 @@ public class ServiceCentroImpl implements ServiceCentroINT {
         centros.add(centro);
         return centro;
     }
+
     @Override
     public Centro actualizarCentro(String id, Centro centroActualizado) {
         if (id == null || centroActualizado == null) return null;
@@ -51,19 +58,33 @@ public class ServiceCentroImpl implements ServiceCentroINT {
         if (centroActualizado.getCapacidad() != null && centroActualizado.getCapacidad() > 0) {
             existente.setCapacidad(centroActualizado.getCapacidad());
         }
-
         return existente;
     }
+
     @Override
     public boolean eliminarCentro(String id) {
         if (id == null) return false;
-        return centros.removeIf(c -> c != null && id.equals(c.getId()));
+
+        for (int i = 0; i < centros.size(); i++) {
+            Centro c = centros.get(i);
+            if (c != null && id.equals(c.getId())) {
+                centros.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
     public boolean existeCentro(String id) {
         return obtenerCentroPorId(id) != null;
     }
+
+    @Override
+    public List<Mensajeros> obtenerMensajerosDelCentro(String centroId) {
+        return new ArrayList<>();
+    }
+
     @Override
     public boolean agregarMensajeroACentro(String centroId, String mensajeroId) {
         Centro c = obtenerCentroPorId(centroId);

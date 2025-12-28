@@ -5,7 +5,7 @@ export default function NavBar() {
   return (
     <header className="navbar">
       <nav className="navbar-inner">
-        <span className="brand">LogiTrack</span>
+        <span className="brand">Bienvenidos</span>
 
         <ul className="nav-links">
           <li>
@@ -38,7 +38,7 @@ export default function NavBar() {
 
           <li>
             <NavLink
-              to="/rutas"
+              to="/ruta"
               className={({ isActive }) => (isActive ? "active" : undefined)}
             >
               Rutas

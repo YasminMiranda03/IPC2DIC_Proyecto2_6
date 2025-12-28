@@ -98,6 +98,19 @@ public class ServiceMensajerosImpl implements ServiceMensajerosINT {
         return e;
     }
     @Override
+    public List<Mensajeros> obtenerMensajerosPorCentro(String centroId) {
+        List<Mensajeros> resp = new ArrayList<>();
+        if (centroId == null || centroId.isBlank()) return resp;
+
+        for (Mensajeros m : mensajeros) {
+            if (m == null) continue;
+            if (centroId.equals(m.getCentroId())) {
+                resp.add(m);
+            }
+        }
+        return resp;
+    }
+    @Override
     public void limpiar() {
         mensajeros.clear();
     }

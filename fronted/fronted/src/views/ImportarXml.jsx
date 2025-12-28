@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { importarXml } from "../service/importar";
+import { useState } from "react" 
+import { importarXml } from "../service/importar" 
 
 
 export default function ImportarXml() {
-  const [file, setFile] = useState(null);
-  const [resultado, setResultado] = useState("");
+  const [file, setFile] = useState(null) 
+  const [resultado, setResultado] = useState("") 
 
   const handleEnviar = async () => {
     try {
-      const texto = await importarXml(file);
-      setResultado(texto);
+      const texto = await importarXml(file) 
+      setResultado(texto) 
     } catch (e) {
-      setResultado("ERROR: " + e.message);
+      setResultado("ERROR: " + e.message) 
     }
-  };
+  } 
 
   return (
     <div>
@@ -28,5 +28,5 @@ export default function ImportarXml() {
 
       <pre>{resultado}</pre>
     </div>
-  );
+  ) 
 }
