@@ -91,7 +91,7 @@ public class ServiceMensajerosImpl implements ServiceMensajerosINT {
     private String normalizarEstado(String estado) {
         if (estado == null || estado.isBlank()) return null;
 
-        String e = estado.trim().toUpperCase();
+        String e = estado.trim().toUpperCase().replace(" ", "_"); 
         if (!e.equals("DISPONIBLE") && !e.equals("EN_TRANSITO")) {
             return null;
         }

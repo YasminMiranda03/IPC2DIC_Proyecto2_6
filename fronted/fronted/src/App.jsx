@@ -3,7 +3,7 @@ import NavBar from "./components/Navbar";
 import ImportarXml from "./views/ImportarXml";
 import Centros from "./views/Centros";
 import Rutas from "./views/Rutas";
-
+import Mensajeros from "./views/Mensajeros";
 
 export default function App() {
   return (
@@ -15,6 +15,7 @@ export default function App() {
           <Route path="/importar" element={<ImportarXml />} />
           <Route path="/centros" element={<Centros />} />
           <Route path="/ruta" element={<Rutas/>}/>
+          <Route path="/mensajeros" element={<Mensajeros />} />
         </Routes>
       </main>
     </div>
