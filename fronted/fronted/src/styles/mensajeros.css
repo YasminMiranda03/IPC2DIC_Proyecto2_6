@@ -6,11 +6,11 @@
 .mensajeros-title {
   font-size: 28px;
   margin-bottom: 20px;
-  color: #2c3e50;
+  color: #f88400;
 }
 
 .card {
-  background: #ffffff;
+  background: #b3ee11;
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 25px;
@@ -20,7 +20,7 @@
 .card h3 {
   margin-top: 0;
   margin-bottom: 15px;
-  color: #34495e;
+  color: #93e200;
 }
 
 .form-row {
@@ -32,7 +32,7 @@
 .form-row input {
   padding: 10px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #a30505;
 }
 
 .btn {
@@ -45,17 +45,17 @@
 
 .btn-primary {
   background: #3498db;
-  color: white;
+  color: rgb(26, 26, 26);
 }
 
 .btn-secondary {
   background: #2ecc71;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .btn-warning {
   background: #f39c12;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .btn-danger {
@@ -74,7 +74,7 @@
 }
 
 .table th {
-  background: #f4f6f8;
+  background: #141414;
   text-align: left;
   padding: 12px;
 }

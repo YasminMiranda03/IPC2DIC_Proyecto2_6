@@ -36,9 +36,9 @@ public class ServiceEnviosImpl implements ServiceEnviosINT{
         if (!"DISPONIBLE".equals(estM)) return false;
 
         serviceMensajeros.cambiarEstado(m.getId(), "EN_TRANSITO");
+        p.setMensajeroId(m.getId());   
         p.setEstado("EN_TRANSITO");
         servicePaquete.actualizarPaquete(p.getId(), p);
-
         return true;
     }
     @Override
@@ -55,18 +55,10 @@ public class ServiceEnviosImpl implements ServiceEnviosINT{
         if (!ok) return null;
 
         p.setEstado(target);
-
         if ("ENTREGADO".equals(target)) {
-          
-            for (Mensajeros m : serviceMensajeros.obtenerMensajeros()) {
-                if (m == null) continue;
-                if (m.getCentroId() == null) continue;
-
-                if (m.getCentroId().equals(p.getCentroActual())
-                        && "EN_TRANSITO".equalsIgnoreCase(m.getEstado())) {
-                    serviceMensajeros.cambiarEstado(m.getId(), "DISPONIBLE");
-                    break;
-                }
+            String mid = p.getMensajeroId();
+            if (mid != null && !mid.isBlank()) {
+                serviceMensajeros.cambiarEstado(mid, "DISPONIBLE");
             }
         }
 
