@@ -156,11 +156,10 @@ export default function Rutas() {
     <section style={{ display: "grid", gap: 16 }}>
       <h2 style={{ margin: 0 }}>Gestión de Rutas</h2>
 
-      {/* LISTA */}
+  
       <div style={{ display: "grid", gap: 10, padding: 12, border: "1px solid #ddd", borderRadius: 8 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
           <strong>Rutas</strong>
-          <button onClick={cargarRutas} style={{ padding: "6px 10px" }}>Recargar</button>
         </div>
 
         {loadingRutas && <p>Cargando rutas...</p>}
@@ -207,7 +206,7 @@ export default function Rutas() {
         )}
       </div>
 
-      {/* DETALLE */}
+    
       <div style={{ padding: 12, border: "1px solid #d41919ff", borderRadius: 8 }}>
         <strong>Detalle de ruta</strong>
 
@@ -226,7 +225,6 @@ export default function Rutas() {
         )}
       </div>
 
-      {/* FORM */}
       <div style={{ padding: 12, border: "1px solid #ddd", borderRadius: 8 }}>
         <strong>{modoEdicion ? "Actualizar ruta" : "Crear ruta"}</strong>
 
@@ -237,24 +235,24 @@ export default function Rutas() {
               name="id"
               value={form.id}
               onChange={onChange}
-              placeholder="0000"
+      
               disabled={modoEdicion} 
             />
           </div>
 
           <div style={{ display: "grid", gap: 6 }}>
             <label>Origen (ID Centro)</label>
-            <input name="origen" value={form.origen} onChange={onChange} placeholder="0000" />
+            <input name="origen" value={form.origen} onChange={onChange} />
           </div>
 
           <div style={{ display: "grid", gap: 6 }}>
             <label>Destino (ID Centro)</label>
-            <input name="destino" value={form.destino} onChange={onChange} placeholder="0000" />
+            <input name="destino" value={form.destino} onChange={onChange} />
           </div>
 
           <div style={{ display: "grid", gap: 6 }}>
             <label>Distancia</label>
-            <input name="distancia" value={form.distancia} onChange={onChange} placeholder="0000" />
+            <input name="distancia" value={form.distancia} onChange={onChange}  />
           </div>
 
           {formError && <p style={{ color: "crimson" }}>{formError}</p>}

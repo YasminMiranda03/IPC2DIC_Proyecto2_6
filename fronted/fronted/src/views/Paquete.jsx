@@ -231,7 +231,7 @@ export default function Paquetes() {
       )}
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 16 }}>
-        {/* LISTA */}
+   
         <div style={{ padding: 12, border: "1px solid #ddd", borderRadius: 10 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
             <strong>Paquetes</strong>
@@ -286,7 +286,7 @@ export default function Paquetes() {
           )}
         </div>
 
-        {/* DETALLE + EDICIÓN */}
+
         <div style={{ padding: 12, border: "1px solid #ddd", borderRadius: 10 }}>
           <strong>Detalle</strong>
 
@@ -297,7 +297,7 @@ export default function Paquetes() {
 
           {seleccionId && !loadingDetalle && detalle && (
             <div style={{ marginTop: 10, display: "grid", gap: 10 }}>
-              {/* Info actual */}
+             
               <div style={{ display: "grid", gap: 6 }}>
                 <div><strong>ID:</strong> {detalle.id}</div>
                 <div><strong>Cliente:</strong> {detalle.cliente}</div>
@@ -314,29 +314,29 @@ export default function Paquetes() {
 
               <hr style={{ margin: "6px 0" }} />
 
-              {/* Form edición */}
+             
               <div style={{ display: "grid", gap: 8 }}>
                 <strong>Editar paquete</strong>
 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                   <input
-                    placeholder="Cliente"
+                 
                     value={editar.cliente}
                     onChange={(e) => setEditar({ ...editar, cliente: e.target.value })}
                   />
                   <input
-                    placeholder="Peso (>0)"
+                   
                     type="number"
                     value={editar.peso}
                     onChange={(e) => setEditar({ ...editar, peso: e.target.value })}
                   />
                   <input
-                    placeholder="Destino (ej: C002)"
+                    
                     value={editar.destino}
                     onChange={(e) => setEditar({ ...editar, destino: e.target.value })}
                   />
                   <input
-                    placeholder="Centro actual (ej: C001)"
+                
                     value={editar.centroActual}
                     onChange={(e) => setEditar({ ...editar, centroActual: e.target.value })}
                   />
@@ -382,35 +382,33 @@ export default function Paquetes() {
         </div>
       </div>
 
-      {/* CREAR */}
       <div style={{ padding: 12, border: "1px solid #ddd", borderRadius: 10 }}>
         <strong>Crear paquete</strong>
 
         <form onSubmit={crear} style={{ marginTop: 10, display: "grid", gap: 10 }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
             <input
-              placeholder="ID (ej: P010)"
               value={nuevo.id}
               onChange={(e) => setNuevo({ ...nuevo, id: e.target.value })}
             />
             <input
-              placeholder="Cliente"
+        
               value={nuevo.cliente}
               onChange={(e) => setNuevo({ ...nuevo, cliente: e.target.value })}
             />
             <input
-              placeholder="Peso (>0)"
+              
               type="number"
               value={nuevo.peso}
               onChange={(e) => setNuevo({ ...nuevo, peso: e.target.value })}
             />
             <input
-              placeholder="Destino (ej: C002)"
+             
               value={nuevo.destino}
               onChange={(e) => setNuevo({ ...nuevo, destino: e.target.value })}
             />
             <input
-              placeholder="Centro actual (ej: C001)"
+              
               value={nuevo.centroActual}
               onChange={(e) => setNuevo({ ...nuevo, centroActual: e.target.value })}
             />

@@ -92,13 +92,11 @@ export default function Centros() {
     <section style={{ display: "grid", gap: 16 }}>
       <h2 style={{ margin: 0 }}>Gestión de Centros</h2>
 
-      {/* LISTA */}
+  
       <div style={{ display: "grid", gap: 10, padding: 12, border: "1px solid #f01414ff", borderRadius: 8 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
           <strong>Centros</strong>
-          <button onClick={cargarCentros} style={{ padding: "6px 10px" }}>
-            Recargar
-          </button>
+          
         </div>
 
         {loadingCentros && <p>Cargando centros...</p>}
@@ -130,7 +128,7 @@ export default function Centros() {
         )}
       </div>
 
-      {/* DETALLE */}
+     
       <div style={{ padding: 12, border: "1px solid #7ef013dc", borderRadius: 8 }}>
         <strong>Detalle del centro</strong>
 
@@ -167,7 +165,6 @@ export default function Centros() {
         )}
       </div>
 
-     {/* PAQUETES */}
 {centroSeleccionadoId && (
   <div style={{ padding: 12, border: "1px solid #ddd", borderRadius: 8 }}>
     <strong>Paquetes del centro</strong>
@@ -209,7 +206,7 @@ export default function Centros() {
   </div>
 )}
 
-      {/* MENSAJEROS */}
+ 
 {centroSeleccionadoId && (
   <div style={{ padding: 12, border: "1px solid #cc2c2cff", borderRadius: 8 }}>
     <strong>Mensajeros del centro</strong>

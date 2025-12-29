@@ -179,7 +179,7 @@ export default function Solicitudes() {
         </div>
       )}
 
-      {/* PROCESAMIENTO */}
+    
       <div style={{ border: "1px solid #ddd", padding: 12, borderRadius: 10 }}>
         <button onClick={procesar1} disabled={loadingProc}>
           Procesar mayor prioridad
@@ -190,7 +190,7 @@ export default function Solicitudes() {
         <button onClick={recargarLista}>Recargar</button>
       </div>
 
-      {/* LISTA */}
+   
       <div style={{ border: "1px solid #ddd", padding: 12, borderRadius: 10 }}>
         <strong>Cola</strong>
 
@@ -214,7 +214,7 @@ export default function Solicitudes() {
         ))}
       </div>
 
-      {/* DETALLE */}
+    
       {seleccionado && (
         <div style={{ border: "1px solid #ddd", padding: 12, borderRadius: 10 }}>
           <strong>Detalle</strong>
@@ -227,12 +227,11 @@ export default function Solicitudes() {
         </div>
       )}
 
-      {/* FORMULARIO */}
+    
       <form onSubmit={crear} style={{ border: "1px solid #ddd", padding: 12 }}>
         <strong>Crear solicitud</strong>
 
         <input
-          placeholder="ID"
           value={nuevo.id}
           onChange={(e) => setNuevo({ ...nuevo, id: e.target.value })}
         />
@@ -246,14 +245,12 @@ export default function Solicitudes() {
         </select>
 
         <input
-          placeholder="Paquete ID"
           value={nuevo.paquete}
           onChange={(e) => setNuevo({ ...nuevo, paquete: e.target.value })}
         />
 
         <input
           type="number"
-          placeholder="Prioridad"
           value={nuevo.prioridad}
           onChange={(e) => setNuevo({ ...nuevo, prioridad: e.target.value })}
         />

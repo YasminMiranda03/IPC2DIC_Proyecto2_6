@@ -201,9 +201,7 @@ export default function Mensajeros() {
         <div style={{ padding: 12, border: "1px solid #ddd", borderRadius: 10 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
             <strong>Mensajeros</strong>
-            <button onClick={recargarLista} style={{ padding: "6px 10px" }}>
-              Recargar
-            </button>
+          
           </div>
 
           {loadingLista && <p style={{ marginTop: 10 }}>Cargando...</p>}
@@ -306,7 +304,7 @@ export default function Mensajeros() {
 
               <div style={{ display: "flex", gap: 10, marginTop: 8, flexWrap: "wrap" }}>
                 <input
-                  placeholder="Paquete ID (ej: P001)"
+                 
                   value={paqueteIdAsignar}
                   onChange={(e) => setPaqueteIdAsignar(e.target.value)}
                   style={{ minWidth: 220 }}
@@ -329,23 +327,23 @@ export default function Mensajeros() {
         <form onSubmit={crear} style={{ marginTop: 10, display: "grid", gap: 10 }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
             <input
-              placeholder="ID (ej: M010)"
+        
               value={nuevo.id}
               onChange={(e) => setNuevo({ ...nuevo, id: e.target.value })}
             />
             <input
-              placeholder="Nombre"
+              
               value={nuevo.nombre}
               onChange={(e) => setNuevo({ ...nuevo, nombre: e.target.value })}
             />
             <input
-              placeholder="Capacidad (número > 0)"
+            
               type="number"
               value={nuevo.capacidad}
               onChange={(e) => setNuevo({ ...nuevo, capacidad: e.target.value })}
             />
             <input
-              placeholder="Centro ID (ej: C001)"
+             
               value={nuevo.centroId}
               onChange={(e) => setNuevo({ ...nuevo, centroId: e.target.value })}
             />

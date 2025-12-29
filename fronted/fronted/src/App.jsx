@@ -6,6 +6,7 @@ import Rutas from "./views/Rutas";
 import Mensajeros from "./views/Mensajeros";
 import Solicitudes from "./views/Solicitudes";
 import Paquetes from "./views/Paquete";
+import Exportar from "./views/Exportar";
 export default function App() {
   return (
     <div>
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/mensajeros" element={<Mensajeros />} />
           <Route path="/solicitudes" element={<Solicitudes/>} />
           <Route path="/paquetes" element={<Paquetes/>} />
+          <Route path="/exportar" element={<Exportar/>} />
         </Routes>
       </main>
     </div>
