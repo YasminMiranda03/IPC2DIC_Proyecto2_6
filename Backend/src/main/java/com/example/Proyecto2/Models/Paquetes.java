@@ -61,5 +61,8 @@ public class Paquetes {
 	 public void setCentroActual(String centroActual) { 
 		 this.centroActual = centroActual;
 	}
+	 private String mensajeroId;
+	 public String getMensajeroId() { return mensajeroId; }
+	 public void setMensajeroId(String mensajeroId) { this.mensajeroId = mensajeroId; }
 	 
 }

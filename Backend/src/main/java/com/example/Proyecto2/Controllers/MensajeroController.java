@@ -1,22 +1,18 @@
 package com.example.Proyecto2.Controllers;
+
 import com.example.Proyecto2.Models.Mensajeros;
 import com.example.Proyecto2.Service.ServiceMensajerosINT;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import com.example.Proyecto2.Models.Mensajeros;
-import com.example.Proyecto2.Service.ServiceMensajerosINT;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 @RestController
 @RequestMapping("/api/mensajeros")
 public class MensajeroController {
 
-	private final ServiceMensajerosINT serviceMensajeros;
+    private final ServiceMensajerosINT serviceMensajeros;
 
     public MensajeroController(ServiceMensajerosINT serviceMensajeros) {
         this.serviceMensajeros = serviceMensajeros;
@@ -28,7 +24,7 @@ public class MensajeroController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> obtenerMensajero(@PathVariable String id) {
+    public ResponseEntity<?> obtenerMensajero(@PathVariable("id") String id) {
         Mensajeros m = serviceMensajeros.obtenerMensajeroPorId(id);
         if (m == null) {
             return ResponseEntity.status(404).body("ERROR: Mensajero no encontrado: " + id);
@@ -47,8 +43,8 @@ public class MensajeroController {
 
     @PutMapping("/{id}/estado")
     public ResponseEntity<?> cambiarEstado(
-            @PathVariable String id,
-            @RequestParam String nuevoEstado
+            @PathVariable("id") String id,
+            @RequestParam("nuevoEstado") String nuevoEstado
     ) {
         Mensajeros existente = serviceMensajeros.obtenerMensajeroPorId(id);
         if (existente == null) {
@@ -65,8 +61,8 @@ public class MensajeroController {
 
     @PutMapping("/{id}/centro")
     public ResponseEntity<?> reasignarCentro(
-            @PathVariable String id,
-            @RequestParam String nuevoCentroId
+            @PathVariable("id") String id,
+            @RequestParam("nuevoCentroId") String nuevoCentroId
     ) {
         Mensajeros existente = serviceMensajeros.obtenerMensajeroPorId(id);
         if (existente == null) {
@@ -80,5 +76,4 @@ public class MensajeroController {
 
         return ResponseEntity.ok(actualizado);
     }
-
 }
