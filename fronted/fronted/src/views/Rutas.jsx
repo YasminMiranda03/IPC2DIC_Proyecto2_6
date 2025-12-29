@@ -2,23 +2,18 @@ import { useEffect, useState } from "react"
 import { obtenerRutas, obtenerRutaPorId, crearRuta, actualizarRuta, eliminarRuta} from "../service/ruta" 
 
 export default function Rutas() {
-  // LISTA
+  
   const [rutas, setRutas] = useState([]) 
   const [loadingRutas, setLoadingRutas] = useState(true) 
   const [errorRutas, setErrorRutas] = useState("")
-
-  // SELECCIÓN / DETALLE
   const [rutaSeleccionadaId, setRutaSeleccionadaId] = useState(null)
   const [detalle, setDetalle] = useState(null)
   const [loadingDetalle, setLoadingDetalle] = useState(false)
   const [errorDetalle, setErrorDetalle] = useState("")
-
-  // FORM (crear/editar)
   const [modoEdicion, setModoEdicion] = useState(false)
   const [saving, setSaving] = useState(false)
   const [formError, setFormError] = useState("")
   const [formSuccess, setFormSuccess] = useState("")
-
   const [form, setForm] = useState({
     id: "",
     origen: "",
@@ -126,10 +121,9 @@ export default function Rutas() {
       }
 
       await cargarRutas() 
-      // refrescar detalle seleccionado (si aplica)
+  
       if (payload.id) await seleccionarRuta(payload.id) 
 
-      // si querés limpiar formulario al crear:
       if (!modoEdicion) limpiarFormulario() 
     } catch (err) {
       setFormError(err.message || "Error al guardar ruta") 
@@ -146,7 +140,7 @@ export default function Rutas() {
       setErrorRutas("") 
       await eliminarRuta(id) 
 
-      // si estaba seleccionada, limpiar
+    
       if (rutaSeleccionadaId === id) {
         setRutaSeleccionadaId(null) 
         setDetalle(null) 
@@ -244,7 +238,7 @@ export default function Rutas() {
               value={form.id}
               onChange={onChange}
               placeholder="0000"
-              disabled={modoEdicion} // id fijo cuando editas
+              disabled={modoEdicion} 
             />
           </div>
 

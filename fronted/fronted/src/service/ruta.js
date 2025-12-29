@@ -1,6 +1,6 @@
 const API_RUTAS = "http://localhost:8080/api/rutas";
 
-// GET /api/rutas
+
 export const obtenerRutas = async () => {
   try {
     const response = await fetch(API_RUTAS);
@@ -15,7 +15,7 @@ export const obtenerRutas = async () => {
   }
 };
 
-// GET /api/rutas/{id}
+
 export const obtenerRutaPorId = async (id) => {
   try {
     const response = await fetch(`${API_RUTAS}/${id}`);
@@ -30,7 +30,7 @@ export const obtenerRutaPorId = async (id) => {
   }
 };
 
-// POST /api/rutas
+
 export const crearRuta = async (ruta) => {
   try {
     const response = await fetch(API_RUTAS, {
@@ -51,7 +51,7 @@ export const crearRuta = async (ruta) => {
   }
 };
 
-// PUT /api/rutas/{id}
+
 export const actualizarRuta = async (id, ruta) => {
   try {
     const response = await fetch(`${API_RUTAS}/${id}`, {
@@ -72,7 +72,7 @@ export const actualizarRuta = async (id, ruta) => {
   }
 };
 
-// DELETE /api/rutas/{id}
+
 export const eliminarRuta = async (id) => {
   try {
     const response = await fetch(`${API_RUTAS}/${id}`, {

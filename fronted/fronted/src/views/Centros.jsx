@@ -20,7 +20,7 @@ export default function Centros() {
   const [loadingMensajeros, setLoadingMensajeros] = useState(false);
   const [errorMensajeros, setErrorMensajeros] = useState("");
 
-  // Cargar lista de centros al entrar
+
   useEffect(() => {
     cargarCentros();
   }, []);
@@ -41,7 +41,7 @@ export default function Centros() {
   const seleccionarCentro = async (id) => {
     setCentroSeleccionadoId(id);
 
-    // reset de secciones
+   
     setDetalle(null);
     setPaquetes([]);
     setMensajeros([]);
@@ -118,7 +118,7 @@ export default function Centros() {
                     borderRadius: 8,
                     border: centroSeleccionadoId === c.id ? "2px solid #333" : "1px solid #f01d1dff",
                     background: centroSeleccionadoId === c.id ? "#47f811c4" : "white",
-                    color: centroSeleccionadoId === c.id ? "white" : "#111",   // <-- ESTO
+                    color: centroSeleccionadoId === c.id ? "white" : "#111",   
                     cursor: "pointer",
                     }}
               >

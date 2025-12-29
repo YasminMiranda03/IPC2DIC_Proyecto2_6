@@ -4,7 +4,8 @@ import ImportarXml from "./views/ImportarXml";
 import Centros from "./views/Centros";
 import Rutas from "./views/Rutas";
 import Mensajeros from "./views/Mensajeros";
-
+import Solicitudes from "./views/Solicitudes";
+import Paquetes from "./views/Paquete";
 export default function App() {
   return (
     <div>
@@ -16,6 +17,8 @@ export default function App() {
           <Route path="/centros" element={<Centros />} />
           <Route path="/ruta" element={<Rutas/>}/>
           <Route path="/mensajeros" element={<Mensajeros />} />
+          <Route path="/solicitudes" element={<Solicitudes/>} />
+          <Route path="/paquetes" element={<Paquetes/>} />
         </Routes>
       </main>
     </div>

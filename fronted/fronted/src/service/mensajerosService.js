@@ -1,12 +1,12 @@
 const API_URL = "http://localhost:8080/api/mensajeros";
 
 async function handleJson(res) {
-  const text = await res.text(); // por si backend manda texto
+  const text = await res.text(); 
   let data = null;
   try {
     data = text ? JSON.parse(text) : null;
   } catch {
-    data = text; // si no era JSON, queda como string
+    data = text; 
   }
 
   if (!res.ok) {
